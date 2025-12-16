@@ -1,0 +1,548 @@
+Srihari V@Wave-Shot MINGW64 ~
+$ cd ~
+
+Srihari V@Wave-Shot MINGW64 ~
+$ cd Documents
+
+Srihari V@Wave-Shot MINGW64 ~/Documents
+$ mkdir CalculatorApp
+
+Srihari V@Wave-Shot MINGW64 ~/Documents
+$ cd CalculatorApp
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp
+$ dotnet new console
+The template "Console App" was created successfully.
+
+Processing post-creation actions...
+Restoring C:\Users\Srihari V\Documents\CalculatorApp\CalculatorApp.csproj:
+Restore succeeded.
+
+
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp
+$ git init
+Initialized empty Git repository in C:/Users/Srihari V/Documents/CalculatorApp/.git/
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (master)
+$ git add .
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (master)
+$ git commit -m "initial commit: .NET console applicaiton"
+[master (root-commit) 3371bca] initial commit: .NET console applicaiton
+ 7 files changed, 740 insertions(+)
+ create mode 100644 CalculatorApp.csproj
+ create mode 100644 Program.cs
+ create mode 100644 obj/CalculatorApp.csproj.nuget.dgspec.json
+ create mode 100644 obj/CalculatorApp.csproj.nuget.g.props
+ create mode 100644 obj/CalculatorApp.csproj.nuget.g.targets
+ create mode 100644 obj/project.assets.json
+ create mode 100644 obj/project.nuget.cache
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (master)
+$ git checkout -b feature/calculator
+Switched to a new branch 'feature/calculator'
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/calculator)
+$ touch Calculator.cs
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/calculator)
+$ touch Calculator.cs
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/calculator)
+$ touch calculator.cs
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/calculator)
+$ git add Calculator.cs
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/calculator)
+$ git commit -m "Add calculator with add and subtract methods"
+[feature/calculator 99fabbd] Add calculator with add and subtract methods
+ 1 file changed, 14 insertions(+)
+ create mode 100644 Calculator.cs
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/calculator)
+$ git checkout main
+error: pathspec 'main' did not match any file(s) known to git
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/calculator)
+$ git merge^C
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/calculator)
+$ git branch
+* feature/calculator
+  master
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/calculator)
+$ git branch -m master main
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/calculator)
+$ git checkout main
+Switched to branch 'main'
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (main)
+$ git merge feature/calculator
+Updating 3371bca..99fabbd
+Fast-forward
+ Calculator.cs | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+ create mode 100644 Calculator.cs
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (main)
+$ git log --oneline --graph --all
+* 99fabbd (HEAD -> main, feature/calculator) Add calculator with add and subtract methods
+* 3371bca initial commit: .NET console applicaiton
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (main)
+$ git checkout main
+Already on 'main'
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (main)
+$ touch UserService.cs
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (main)
+$ git add UserService.cs
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (main)
+$ git commit -m "Added file"
+[main 3d906d1] Added file
+ 1 file changed, 9 insertions(+)
+ create mode 100644 UserService.cs
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (main)
+$ git commit --amend -m "Add UserService for user creation"
+[main 1bbe2f5] Add UserService for user creation
+ Date: Tue Dec 16 14:33:10 2025 +0530
+ 1 file changed, 9 insertions(+)
+ create mode 100644 UserService.cs
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (main)
+$ git log --oneline -1
+1bbe2f5 (HEAD -> main) Add UserService for user creation
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (main)
+$ touch OrderService.cs
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (main)
+$ git add OrderService.cs
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (main)
+$ git commit -m "Add OrderService"
+[main 4d557fd] Add OrderService
+ 1 file changed, 9 insertions(+)
+ create mode 100644 OrderService.cs
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   OrderService.cs
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (main)
+$ git stash
+Saved working directory and index state WIP on main: 4d557fd Add OrderService
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (main)
+$ git checkout -b hotfix/order-null-fix
+Switched to a new branch 'hotfix/order-null-fix'
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (hotfix/order-null-fix)
+$ git add OrderService.cs
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (hotfix/order-null-fix)
+$ git commit -m "Fix null order validation"
+[hotfix/order-null-fix 1326826] Fix null order validation
+ 1 file changed, 8 insertions(+)
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (hotfix/order-null-fix)
+$ git checkout main
+Switched to branch 'main'
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (main)
+$ git stash pop
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   OrderService.cs
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (4ecc09eae0f6b3dd7c2cf76372981ecdb23b0e77)
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (main)
+$ git log --online --graph --all
+fatal: unrecognized argument: --online
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (main)
+$ git log --oneline --graph --all
+* 1326826 (hotfix/order-null-fix) Fix null order validation
+* 4d557fd (HEAD -> main) Add OrderService
+* 1bbe2f5 Add UserService for user creation
+* 99fabbd (feature/calculator) Add calculator with add and subtract methods
+* 3371bca initial commit: .NET console applicaiton
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (main)
+$ touch PaymentService.cs
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (main)
+$ git add PaymentService.cs
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (main)
+$ git commit -m "Add base PaymentService"
+[main e812c95] Add base PaymentService
+ 1 file changed, 9 insertions(+)
+ create mode 100644 PaymentService.cs
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (main)
+$ git checkout -b feature/payment-null-check
+Switched to a new branch 'feature/payment-null-check'
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/payment-null-check)
+$ git checkout main
+M       OrderService.cs
+Switched to branch 'main'
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (main)
+$ git checkout -b feature/payment-logic-change
+Switched to a new branch 'feature/payment-logic-change'
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/payment-logic-change)
+$ git add PaymentService.cs
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/payment-logic-change)
+$ git commit -m "Change payment logic to minimum amount check"
+[feature/payment-logic-change 7151aaa] Change payment logic to minimum amount check
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/payment-logic-change)
+$ git checkout main
+M       OrderService.cs
+Switched to branch 'main'
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (main)
+$ git merge feature/payment-null-check
+Already up to date.
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (main)
+$ git merge feature/payment-logic-change
+Updating e812c95..7151aaa
+Fast-forward
+ PaymentService.cs | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (main)
+$ git add PaymentService.cs
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (main)
+$ git commit -m "Resolve merge conflict: combine null check and payment logic"
+[main dd5a7b0] Resolve merge conflict: combine null check and payment logic
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (main)
+$ git log --oneline --graph --all
+* dd5a7b0 (HEAD -> main) Resolve merge conflict: combine null check and payment logic
+* 7151aaa (feature/payment-logic-change) Change payment logic to minimum amount check
+* e812c95 (feature/payment-null-check) Add base PaymentService
+| * 1326826 (hotfix/order-null-fix) Fix null order validation
+|/
+* 4d557fd Add OrderService
+* 1bbe2f5 Add UserService for user creation
+* 99fabbd (feature/calculator) Add calculator with add and subtract methods
+* 3371bca initial commit: .NET console applicaiton
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (main)
+$ pwd
+/c/Users/Srihari V/Documents/CalculatorApp
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   OrderService.cs
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (main)
+$ git branch
+  feature/calculator
+  feature/payment-logic-change
+  feature/payment-null-check
+  hotfix/order-null-fix
+* main
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (main)
+$ git checkout -b develop
+Switched to a new branch 'develop'
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (develop)
+$ git checkout develop
+M       OrderService.cs
+Already on 'develop'
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (develop)
+$ git checkout -b hotfix/login
+Switched to a new branch 'hotfix/login'
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (hotfix/login)
+$ touch LoginService.cs
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (hotfix/login)
+$ git add LoginService.cs
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (hotfix/login)
+$ git commit -m "Add LoginService"
+[hotfix/login 1992506] Add LoginService
+ 1 file changed, 9 insertions(+)
+ create mode 100644 LoginService.cs
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (hotfix/login)
+$ git add LoginService.cs
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (hotfix/login)
+$ git commit -m "Fix null check in login"
+[hotfix/login 29ac5b9] Fix null check in login
+ 1 file changed, 4 insertions(+)
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (hotfix/login)
+$ git log --oneline
+29ac5b9 (HEAD -> hotfix/login) Fix null check in login
+1992506 Add LoginService
+dd5a7b0 (main, develop) Resolve merge conflict: combine null check and payment logic
+7151aaa (feature/payment-logic-change) Change payment logic to minimum amount check
+e812c95 (feature/payment-null-check) Add base PaymentService
+4d557fd Add OrderService
+1bbe2f5 Add UserService for user creation
+99fabbd (feature/calculator) Add calculator with add and subtract methods
+3371bca initial commit: .NET console applicaiton
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (hotfix/login)
+$ git checkout develop
+M       OrderService.cs
+Switched to branch 'develop'
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (develop)
+$ git cherry-pick abc1234
+fatal: bad revision 'abc1234'
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (develop)
+$ ^C
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (develop)
+$ ^C
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (develop)
+$ git stash
+Saved working directory and index state WIP on develop: dd5a7b0 Resolve merge conflict: combine null check and payment logic
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (develop)
+$ git status
+On branch develop
+nothing to commit, working tree clean
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (develop)
+$ git cherry-pick 29ac5bb9
+fatal: bad revision '29ac5bb9'
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (develop)
+$ ^C
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (develop)
+$ git cherry-pick 29ac5b9
+CONFLICT (modify/delete): LoginService.cs deleted in HEAD and modified in 29ac5b9 (Fix null check in login).  Version 29ac5b9 (Fix null check in login) of LoginService.cs left in tree.
+error: could not apply 29ac5b9... Fix null check in login
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git cherry-pick --continue".
+hint: You can instead skip this commit with "git cherry-pick --skip".
+hint: To abort and get back to the state before "git cherry-pick",
+hint: run "git cherry-pick --abort".
+hint: Disable this message with "git config set advice.mergeConflict false"
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (develop|CHERRY-PICKING)
+$ git log --oneline --graph --all
+*   c701f95 (refs/stash) WIP on develop: dd5a7b0 Resolve merge conflict: combine null check and payment logic
+|\
+| * 431c273 index on develop: dd5a7b0 Resolve merge conflict: combine null check and payment logic
+|/
+| * 29ac5b9 (hotfix/login) Fix null check in login
+| * 1992506 Add LoginService
+|/
+* dd5a7b0 (HEAD -> develop, main) Resolve merge conflict: combine null check and payment logic
+* 7151aaa (feature/payment-logic-change) Change payment logic to minimum amount check
+* e812c95 (feature/payment-null-check) Add base PaymentService
+| * 1326826 (hotfix/order-null-fix) Fix null order validation
+|/
+* 4d557fd Add OrderService
+* 1bbe2f5 Add UserService for user creation
+* 99fabbd (feature/calculator) Add calculator with add and subtract methods
+* 3371bca initial commit: .NET console applicaiton
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (develop|CHERRY-PICKING)
+$ git stash pop
+LoginService.cs: needs merge
+error: could not write index
+The stash entry is kept in case you need it again.
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (develop|CHERRY-PICKING)
+$ git status
+On branch develop
+You are currently cherry-picking commit 29ac5b9.
+  (fix conflicts and run "git cherry-pick --continue")
+  (use "git cherry-pick --skip" to skip this patch)
+  (use "git cherry-pick --abort" to cancel the cherry-pick operation)
+
+Unmerged paths:
+  (use "git add/rm <file>..." as appropriate to mark resolution)
+        deleted by us:   LoginService.cs
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (develop|CHERRY-PICKING)
+$ git branch
+* develop
+  feature/calculator
+  feature/payment-logic-change
+  feature/payment-null-check
+  hotfix/login
+  hotfix/order-null-fix
+  main
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (develop|CHERRY-PICKING)
+$ git checkout -b feature/report-module
+Switched to a new branch 'feature/report-module'
+warning: cancelling a cherry picking in progress
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/report-module)
+$ git rebase main
+LoginService.cs: needs merge
+error: cannot rebase: You have unstaged changes.
+error: additionally, your index contains uncommitted changes.
+error: Please commit or stash them.
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/report-module)
+$ ^C
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/report-module)
+$ git status
+On branch feature/report-module
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add/rm <file>..." as appropriate to mark resolution)
+        deleted by us:   LoginService.cs
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/report-module)
+$ ^C
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/report-module)
+$ git checkout main --LoginService.cs
+error: unknown option `LoginService.cs'
+usage: git checkout [<options>] <branch>
+   or: git checkout [<options>] [<branch>] -- <file>...
+
+    -b <branch>           create and checkout a new branch
+    -B <branch>           create/reset and checkout a branch
+    -l                    create reflog for new branch
+    --[no-]guess          second guess 'git checkout <no-such-branch>' (default)
+    --[no-]overlay        use overlay mode (default)
+    -q, --[no-]quiet      suppress progress reporting
+    --[no-]recurse-submodules[=<checkout>]
+                          control recursive updating of submodules
+    --[no-]progress       force progress reporting
+    -m, --[no-]merge      perform a 3-way merge with the new branch
+    --[no-]conflict <style>
+                          conflict style (merge, diff3, or zdiff3)
+    -d, --[no-]detach     detach HEAD at named commit
+    -t, --[no-]track[=(direct|inherit)]
+                          set branch tracking configuration
+    -f, --[no-]force      force checkout (throw away local modifications)
+    --[no-]orphan <new-branch>
+                          new unborn branch
+    --[no-]overwrite-ignore
+                          update ignored files (default)
+    --[no-]ignore-other-worktrees
+                          do not check if another worktree is using this branch
+    -2, --ours            checkout our version for unmerged files
+    -3, --theirs          checkout their version for unmerged files
+    -p, --[no-]patch      select hunks interactively
+    -U, --unified <n>     generate diffs with <n> lines context
+    --inter-hunk-context <n>
+                          show context between diff hunks up to the specified number of lines
+    --[no-]ignore-skip-worktree-bits
+                          do not limit pathspecs to sparse entries only
+    --[no-]pathspec-from-file <file>
+                          read pathspec from file
+    --[no-]pathspec-file-nul
+                          with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/report-module)
+$ git add LoginService.cs
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/report-module)
+$ git rebase --continue
+fatal: no rebase in progress
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/report-module)
+$ git rebase main
+error: cannot rebase: Your index contains uncommitted changes.
+error: Please commit or stash them.
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/report-module)
+$ ^C
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/report-module)
+$ git status
+On branch feature/report-module
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   LoginService.cs
+
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/report-module)
+$ git stash
+Saved working directory and index state WIP on feature/report-module: dd5a7b0 Resolve merge conflict: combine null check and payment logic
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/report-module)
+$ git status
+On branch feature/report-module
+nothing to commit, working tree clean
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/report-module)
+$ git rebase main
+Current branch feature/report-module is up to date.
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/report-module)
+$ git rebase main
+Current branch feature/report-module is up to date.
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/report-module)
+$ ^C
+
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/report-module)
+$ git rebase main
+Current branch feature/report-module is up to date.
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/report-module)
+$ git log --oneline --graph
+* dd5a7b0 (HEAD -> feature/report-module, main, develop) Resolve merge conflict: combine null check and payment logic
+* 7151aaa (feature/payment-logic-change) Change payment logic to minimum amount check
+* e812c95 (feature/payment-null-check) Add base PaymentService
+* 4d557fd Add OrderService
+* 1bbe2f5 Add UserService for user creation
+* 99fabbd (feature/calculator) Add calculator with add and subtract methods
+* 3371bca initial commit: .NET console applicaiton
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/report-module)
+$ ^C
+
+Srihari V@Wave-Shot MINGW64 ~/Documents/CalculatorApp (feature/report-module)
+$
